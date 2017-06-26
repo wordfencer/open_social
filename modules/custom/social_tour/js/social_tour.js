@@ -30,7 +30,22 @@
                     element: "#main-navigation",
                     title: "Explore this platform",
                     content: "And interact with all the beautiful people and pieces of content in it.",
-                    placement: "bottom"
+                    placement: "bottom",
+                    onShow: function (tour) {
+                      // Open the dropdown before attaching to the element (not working correctly yet...)
+                      $('#block-socialblue-sitebranding .navbar-toggle').click();
+                      return
+                    },
+                    onPrev: function (tour) {
+                      // Open the dropdown before attaching to the element (not working correctly yet...)
+                      $('#block-socialblue-sitebranding .navbar-toggle').click();
+                      return
+                    },
+                    onNext: function (tour) {
+                      // Open the dropdown before attaching to the element (not working correctly yet...)
+                      $('#block-socialblue-sitebranding .navbar-toggle').click();
+                      return
+                    }
                   },
                   {
                     element: "#block-socialblue-accountheaderblock .notification-bell",
