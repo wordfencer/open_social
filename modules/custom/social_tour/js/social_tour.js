@@ -51,13 +51,22 @@
                     element: "#block-socialblue-accountheaderblock .notification-bell",
                     title: "The notification panel",
                     content: "You will find all sorts of notifications here.",
-                    placement: "bottom"
+                    placement: "bottom",
+                    smartPlacement: true
                   },
                   {
-                    element: "#edit-submit--4",
+                    element: "#edit-field-post-wrapper",
                     title: "Write your first post",
                     content: "To tell the world about how awesome you are!",
-                    placement: "bottom",
+                    placement: "left",
+                    smartPlacement: true,
+                    backdrop: true
+                  },
+                  {
+                    element: "#edit-submit--2",
+                    title: "Write a comment",
+                    content: "To start discussing shit!",
+                    placement: "right",
                     smartPlacement: true
                   }
                 ]});
