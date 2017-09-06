@@ -12,7 +12,7 @@ Feature: Create Post with Photo
     And I am on the homepage
     And I should not see "PostPhotoCreate1" in the "Main content front"
 
-   When I attach the file "/files/opensocial.jpg" to hidden field "edit-field-post-image-0-upload"
+   When I attach the file "opensocial.jpg" to hidden field "edit-field-post-image-0-upload"
     And I wait for AJAX to finish
 
     When I fill in "Say something about this photo" with "This post with a photo."

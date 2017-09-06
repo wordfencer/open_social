@@ -18,9 +18,9 @@ Feature: Private files
     When I fill in the following:
       | Title | Private: topic |
     And I fill in the "edit-body-0-value" WYSIWYG editor with "Private: topic text"
-    And I attach the file "/files/opensocial.jpg" to "Image"
+    And I attach the file "opensocial.jpg" to "Image"
     And I wait for AJAX to finish
-    And I attach the file "/files/humans.txt" to "Add a new file"
+    And I attach the file "humans.txt" to "Add a new file"
     And I wait for AJAX to finish
     And I press "Save"
     Then I should see "Topic Private: topic has been created."
@@ -30,7 +30,7 @@ Feature: Private files
     When I fill in the following:
       | Add a comment | This is a test comment |
     And I press "Add attachment"
-    And I attach the file "/files/humans.txt" to "edit-field-comment-files-0-upload"
+    And I attach the file "humans.txt" to "edit-field-comment-files-0-upload"
     And I wait for AJAX to finish
     And I press "Comment"
     And I should see the success message "Your comment has been posted."
@@ -38,13 +38,13 @@ Feature: Private files
     # Now save profile picture.
     Given I am on "/user"
     And I click "Edit profile information"
-    And I attach the file "/files/opensocial.jpg" to "Profile image"
+    And I attach the file "opensocial.jpg" to "Profile image"
     And I wait for AJAX to finish
     And I press "Save"
 
     # Now create a post.
     Given I am on the homepage
-    When I attach the file "/files/opensocial.jpg" to hidden field "edit-field-post-image-0-upload"
+    When I attach the file "opensocial.jpg" to hidden field "edit-field-post-image-0-upload"
     And I wait for AJAX to finish
     And I fill in "Say something about this photo" with "Private: post photo"
     And I select post visibility "Community"
@@ -72,7 +72,7 @@ Feature: Private files
       | Title | Private WYSIWYG: topic |
     And I click on the image icon in the WYSIWYG editor
     And I wait for AJAX to finish
-    And I attach the file "/files/opensocial.jpg" to "files[fid]"
+    And I attach the file "opensocial.jpg" to "files[fid]"
     And I wait for AJAX to finish
     And I fill in "Alternative text" with "Just a private image test"
     And I press "Save" in the "WYSIWYG dialog"
