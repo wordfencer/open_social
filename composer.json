@@ -73,6 +73,6 @@
         "happyr/linkedin-api-client": "^1.0",
         "abraham/twitteroauth": "^0.7.2",
         "swiftmailer/swiftmailer" : "5.4.8",
-        "embed/embed" : "3.2.0"
+        "embed/embed" : "2.5.1"
     }
 }
