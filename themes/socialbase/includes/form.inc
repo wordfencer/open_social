@@ -27,6 +27,10 @@ function socialbase_preprocess_form(&$variables) {
     if ($element['#region'] === 'hero') {
       $variables['in_hero_region'] = TRUE;
     }
+
+    if ($element['#region'] === 'content-top') {
+      $variables['in_content_top_region'] = TRUE;
+    }
   }
 
   $variables['attributes']['class'][] = 'clearfix';
@@ -94,7 +98,6 @@ function socialbase_preprocess_form(&$variables) {
       /** @var \Drupal\social_post\Entity\Post $post */
       $post = entity_load('post', $post_id);
 
-      $form['#post_id'] = $post->id();
       // Display post created date in format 'time ago'.
       $created_time_ago = \Drupal::service('date.formatter')
         ->formatTimeDiffSince($post->getCreatedTime(), array('granularity' => 1, 'return_as_object' => TRUE));
@@ -207,6 +210,7 @@ function socialbase_form_alter(&$form, FormStateInterface $form_state, $form_id)
     'user_pass_reset',
     'social_user_login_form',
     'user_register_form',
+    'profile_profile_add_form',
     'profile_profile_edit_form',
     'social_user_password_form',
     'user_cancel_form',
