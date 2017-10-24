@@ -43,6 +43,9 @@
             },
             "drupal/url_embed": {
                 "WSOD if wrong url or network unavailable": "https://www.drupal.org/files/issues/url_embed_WSOD_convert_url_to_embed-2871744-5.patch"
+            },
+            "open_social/social_group": {
+                "blaa": "https://patch-diff.githubusercontent.com/raw/goalgorilla/open_social/pull/596.patch"
             }
         }
     },
