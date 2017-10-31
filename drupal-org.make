@@ -70,3 +70,5 @@ projects[votingapi][type] = module
 projects[votingapi][version] = 3.0-alpha2
 projects[bootstrap][type] = theme
 projects[bootstrap][version] = 3.6
+projects[simplesamlphp_auth][type] = module
+projects[simplesamlphp_auth][version] = 3.0-rc2
