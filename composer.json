@@ -104,7 +104,7 @@
         "bower-asset/d3": "v3.5.17",
         "bower-asset/highlight": "9.7.0",
         "embed/embed": "2.7.7",
-        "simplesamlphp/simplesamlphp": "1.14.7",
+        "simplesamlphp/simplesamlphp": "1.14.17",
         "drupal/simplesamlphp_auth": "3.0-rc2"
     }
 }
