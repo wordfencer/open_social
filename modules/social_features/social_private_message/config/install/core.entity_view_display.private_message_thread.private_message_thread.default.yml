@@ -17,20 +17,20 @@ content:
   members:
     label: hidden
     type: social_private_message_member_formatter
-    weight: 0
+    weight: 5
     region: content
     settings:
       display_type: label
       entity_display_mode: private_message_author
     third_party_settings: {  }
   private_message_form:
-    weight: 2
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }
   private_messages:
     type: private_message_thread_message_formatter
-    weight: 1
+    weight: 10
     region: content
     label: hidden
     settings:

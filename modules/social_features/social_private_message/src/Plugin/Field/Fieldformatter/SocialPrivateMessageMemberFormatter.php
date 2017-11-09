@@ -17,6 +17,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *
  * @FieldFormatter(
  *   id = "social_private_message_member_formatter",
+ *   module = "social_private_message",
  *   label = @Translation("Social Private Message Members"),
  *   field_types = {
  *     "entity_reference"
