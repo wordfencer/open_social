@@ -1,0 +1,7 @@
+name: Social Poll
+type: module
+description: Module for creating polls.
+core: '8.x'
+package: Social (experimental)
+dependencies:
+  - drupal:poll
