@@ -2,7 +2,12 @@
 
 namespace Drupal\activity_logger\Plugin\QueueWorker;
 
+use Drupal\activity_creator\Annotation\ActivityAction;
+use Drupal\activity_creator\Plugin\ActivityActionManager;
+use Drupal\activity_logger\Service\ActivityLoggerFactory;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\node\Entity\Node;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * A report worker.
@@ -15,7 +20,23 @@ use Drupal\node\Entity\Node;
  *
  * This QueueWorker is responsible for creating message items from the queue
  */
-class MessageQueueCreator extends MessageQueueBase {
+class MessageQueueCreator extends MessageQueueBase implements ContainerFactoryPluginInterface {
+  protected $activity_action;
+
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, ActivityActionManager $activity_action) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+
+    $this->activity_action = $activity_action;
+  }
+
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+    return new static(
+      $configuration,
+      $plugin_id,
+      $plugin_definition,
+      $container->get('plugin.manager.activity_action.processor')
+    );
+  }
 
   /**
    * {@inheritdoc}
@@ -39,9 +60,9 @@ class MessageQueueCreator extends MessageQueueBase {
         $queue->createItem($data);
       }
       else {
-        $activity_logger_factory = \Drupal::service('plugin.manager.activity_action.processor');
         // Trigger the create action for enttites.
-        $create_action = $activity_logger_factory->createInstance('create_entitiy_action');
+        $create_action = $this->activity_action->createInstance('create_entitiy_action');
+        /** @var \Drupal\activity_basics\Plugin\ActivityAction\CreateActivityAction $create_action */
         $create_action->createMessage($entity);
       }
     }
