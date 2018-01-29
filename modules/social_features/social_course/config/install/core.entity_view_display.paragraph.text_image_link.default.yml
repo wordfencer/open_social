@@ -1,0 +1,55 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.text_image_link.field_til_image
+    - field.field.paragraph.text_image_link.field_til_link
+    - field.field.paragraph.text_image_link.field_til_text
+    - field.field.paragraph.text_image_link.field_til_title
+    - paragraphs.paragraphs_type.text_image_link
+  module:
+    - image
+    - link
+    - text
+id: paragraph.text_image_link.default
+targetEntityType: paragraph
+bundle: text_image_link
+mode: default
+content:
+  field_til_image:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_til_link:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_til_text:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_til_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: nested_content
+label: 'Nested content'
+icon_uuid: null
+description: null
+behavior_plugins: {  }
