@@ -74,8 +74,6 @@
         "drupal/group": "1.0-rc1",
         "drupal/image_effects": "1.0",
         "drupal/image_widget_crop": "2.1",
-        "drupal/leaflet": "1.0-beta1",
-        "drupal/leaflet_more_maps": "1.0-alpha3",
         "drupal/like_and_dislike": "1.0-alpha2",
         "drupal/link_css": "1.x-dev",
         "drupal/mailsystem" : "4.1",
