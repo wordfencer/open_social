@@ -18,6 +18,11 @@ section.hero:
     theme:
       css/social_landing_page.section.hero.css: {}
 
+section.bighero:
+  css:
+    theme:
+      css/social_landing_page.section.bighero.css: {}
+
 section.block:
   css:
     theme:

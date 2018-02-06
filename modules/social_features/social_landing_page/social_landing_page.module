@@ -68,6 +68,9 @@ function social_landing_page_theme() {
   $theme_templates['paragraph__hero__default'] = [
     'base hook' => 'paragraph',
   ];
+  $theme_templates['paragraph__bighero__default'] = [
+    'base hook' => 'paragraph',
+  ];
   $theme_templates['paragraph__introduction__default'] = [
     'base hook' => 'paragraph',
   ];

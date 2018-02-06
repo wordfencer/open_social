@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+label: 'Big Hero Landing'
+id: bighero_landing
+description: 'Header image for Landing Page Big Hero section.'
+aspect_ratio: '150:80'
+soft_limit_width: 1500
+soft_limit_height: 800
+hard_limit_width: null
+hard_limit_height: null
