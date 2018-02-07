@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Hook implementations for the Entity Renamer module.
+ */
+
+use Drupal\entity_renamer\Entity\NodeType;
+
+/**
+ * Implements hook_entity_type_build().
+ */
+function entity_renamer_entity_type_build(&$entity_types) {
+  if (isset($entity_types['node_type'])) {
+    $entity_types['node_type']->setClass(NodeType::class);
+  }
+}
