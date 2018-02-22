@@ -159,16 +159,6 @@
 
 }
 
-/*
-* Fix styles if last of page textarea is focused on mobile
-* Only for page with textareas.
- */
-.main-container.open-keyboard {
-  @include for-phone-only {
-    padding-bottom: 270px;
-  }
-}
-
 // when optional module social_comment_upload is enabled
 .comment-attachments {
   flex: 1 0 100%;
