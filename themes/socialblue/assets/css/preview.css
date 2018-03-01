@@ -64,7 +64,7 @@ blockquote {
 }
 
 strong {
-  font-weight: 500;
+  font-weight: bold;
 }
 
 .text-primary {
@@ -1607,7 +1607,7 @@ blockquote {
   .teaser__image {
     border-top-left-radius: inherit;
     border-bottom-left-radius: inherit;
-    background: #29abe2;
+    background: #e6e6e6;
   }
   .teaser__teaser-type {
     background-color: rgba(0, 0, 0, 0.5);
