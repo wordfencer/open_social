@@ -79,7 +79,7 @@
 }
 
 .message__thread-members {
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .private-message-full {
@@ -87,7 +87,7 @@
 }
 
 .private-message-full .message__owner {
-  font-weight: 500;
+  font-weight: 700;
   padding-right: 1em;
 }
 

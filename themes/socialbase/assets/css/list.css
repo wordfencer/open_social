@@ -69,7 +69,7 @@
 }
 
 .list-item--visibility .form-group label {
-  font-weight: 500;
+  font-weight: bold;
   cursor: pointer;
 }
 

@@ -242,7 +242,7 @@ pre code {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: inherit;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.1;
   margin: 1rem 0 0.5rem;
   -webkit-transition: 0.3s;
@@ -306,7 +306,7 @@ h6 .small, .h6 small,
 
 h1, .h1 {
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: bold;
 }
 
 h2, .h2 {
@@ -448,7 +448,7 @@ p > iframe {
 a {
   background-color: transparent;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: bold;
   color: inherit;
   -webkit-tap-highlight-color: transparent;
 }
@@ -545,7 +545,7 @@ th {
 
 .table thead th {
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 12px;
   vertical-align: bottom;
   border-bottom: 2px solid #e6e6e6;

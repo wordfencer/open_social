@@ -223,7 +223,7 @@
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
   border: 0;
   color: white;
-  font-weight: 500;
+  font-weight: bold;
   padding: 8px 10px;
   height: 50px;
   min-width: 50px;
@@ -455,7 +455,7 @@
       outline: 0;
       border-radius: 0;
       border-bottom: 2px solid;
-      font-weight: 500;
+      font-weight: bold;
       max-width: none;
     }
 
