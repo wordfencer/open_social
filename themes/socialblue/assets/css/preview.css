@@ -870,7 +870,7 @@ fieldset[disabled] .btn--twitter.focus {
 
 .card__title {
   color: #777;
-  font-weight: 500;
+  font-weight: bold;
   text-transform: uppercase;
 }
 
@@ -1082,7 +1082,7 @@ html.js .input-group-addon .glyphicon.glyphicon-spin {
 }
 
 .form-wrapper__label {
-  font-weight: 500;
+  font-weight: bold;
 }
 
 .form-wrapper {
@@ -1146,7 +1146,7 @@ html.js .input-group-addon .glyphicon.glyphicon-spin {
 .navbar-default .dropdown-menu > li > a.is-active {
   background-color: #e6e6e6;
   color: #4d4d4d;
-  font-weight: 500;
+  font-weight: bold;
 }
 
 .navbar-default .dropdown-menu > li > a.is-active:hover, .navbar-default .dropdown-menu > li > a.is-active:focus {
@@ -1238,7 +1238,7 @@ html.js .input-group-addon .glyphicon.glyphicon-spin {
 }
 
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
-  font-weight: 500;
+  font-weight: bold;
   color: #29abe2;
   background-color: transparent;
 }

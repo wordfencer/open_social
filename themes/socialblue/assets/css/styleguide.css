@@ -543,12 +543,12 @@
 
 .toc-wrapper .nav li a:hover, .toc-wrapper .nav li a:focus {
   color: #29abe2;
-  font-weight: 500;
+  font-weight: bold;
 }
 
 .toc-wrapper .nav li.active a {
   color: #29abe2;
-  font-weight: 500;
+  font-weight: bold;
 }
 
 .toc-wrapper .nav li.active a:before {

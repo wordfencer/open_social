@@ -40,14 +40,14 @@
       &:hover,
       &:focus {
         color: $brand-primary;
-        font-weight: 500;
+        font-weight: bold;
       }
 
     }
 
     &.active a {
       color: $brand-primary;
-      font-weight: 500;
+      font-weight: bold;
 
       &:before {
         background-color: $brand-primary;

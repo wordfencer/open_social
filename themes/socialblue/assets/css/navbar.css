@@ -55,7 +55,7 @@
 .navbar-default .dropdown-menu > li > a.is-active {
   background-color: #e6e6e6;
   color: #4d4d4d;
-  font-weight: 500;
+  font-weight: bold;
 }
 
 .navbar-default .dropdown-menu > li > a.is-active:hover, .navbar-default .dropdown-menu > li > a.is-active:focus {

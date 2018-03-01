@@ -33,7 +33,7 @@ html.js .input-group-addon .glyphicon.glyphicon-spin {
 }
 
 .form-wrapper__label {
-  font-weight: 500;
+  font-weight: bold;
 }
 
 .form-wrapper {
