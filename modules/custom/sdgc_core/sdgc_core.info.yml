@@ -1,0 +1,6 @@
+name: 'SDGC Core'
+description: 'Provides core components for the SDGC platform.'
+type: module
+core: 8.x
+
+package: Social

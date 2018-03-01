@@ -4,6 +4,11 @@ namespace Drupal\Tests\social_core\FunctionalJavascript;
 
 use Drupal\FunctionalJavascriptTests\JavascriptTestBase as BaseJavascriptTestBase;
 
+/**
+ * Base class for Open Social Functional Javascript tests.
+ *
+ * @package Drupal\Tests\social_core\FunctionalJavascript
+ */
 class JavascriptTestBase extends BaseJavascriptTestBase {
 
   /**
@@ -22,9 +27,14 @@ class JavascriptTestBase extends BaseJavascriptTestBase {
     'socialblue.settings',
   ];
 
-  /** @var \Drupal\social_core\TestHelper\SocialRenamer */
+  /**
+   * @var \Drupal\social_core\TestHelper\SocialRenamer
+   */
   protected $renamer;
 
+  /**
+   * {@inheritdoc}
+   */
   public function __construct($name = NULL, array $data = [], $dataName = '') {
     parent::__construct($name, $data, $dataName);
 
@@ -45,7 +55,7 @@ class JavascriptTestBase extends BaseJavascriptTestBase {
     $renamer_class = "Drupal\\" . $renamer_module . "\\TestHelper\\SocialRenamer";
 
     if (!class_exists($renamer_class)) {
-      throw new \Exception($renamer_class . " could not be found in namespace " . __NAMESPACE__);
+      throw new \Exception($renamer_class . " could not be found.");
     }
 
     $this->renamer = new $renamer_class();
