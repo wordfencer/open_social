@@ -9,7 +9,7 @@
 }
 
 .message {
-  font-weight: 300;
+  font-weight: normal;
   -webkit-transition: -webkit-box-shadow 0.3s;
   transition: -webkit-box-shadow 0.3s;
   transition: box-shadow 0.3s;

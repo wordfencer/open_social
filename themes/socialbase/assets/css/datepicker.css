@@ -128,7 +128,6 @@ input[type='text'].form-time {
   width: 30px;
   height: 30px;
   line-height: 30px;
-  font-weight: 300;
 }
 
 .ui-datepicker-calendar > tbody > tr > td .ui-state-default:hover {
