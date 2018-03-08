@@ -119,7 +119,7 @@
 
 #kss-node .kss-nav__ref-child + .kss-nav__name {
   margin-left: 0.5rem;
-  font-weight: 300;
+  font-weight: normal;
 }
 
 #kss-node .kss-section {

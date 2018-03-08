@@ -33,7 +33,7 @@
 .list-item--active .help-block,
 .list-item--active:hover .help-block {
   color: white;
-  font-weight: 300;
+  font-weight: normal;
 }
 
 .list-item__avatar img {

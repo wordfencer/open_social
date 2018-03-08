@@ -16,7 +16,7 @@
        url("../font/montserrat/montserrat-normal.woff") format('woff'),
        url("../font/montserrat/montserrat-normal.ttf") format('truetype'),
        url("../font/montserrat/montserrat-normal.svg") format('svg');
-  font-weight: 500;
+  font-weight: normal;
   font-style: normal;
 }
 
@@ -27,7 +27,7 @@
        url("../font/montserrat/montserrat-bold.woff") format('woff'),
        url("../font/montserrat/montserrat-bold.ttf") format('truetype'),
        url("../font/montserrat/montserrat-bold.svg") format('svg');
-  font-weight: 700;
+  font-weight: bold;
   font-style: normal;
 }
 
@@ -301,7 +301,6 @@ a.default-light:focus {
 
 body {
   font-family: "montserrat", sans-serif;
-  font-weight: 300;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #4d4d4d;
@@ -1078,7 +1077,7 @@ html.js .input-group-addon .glyphicon.glyphicon-spin {
 }
 
 .control-label {
-  font-weight: 300;
+  font-weight: normal;
 }
 
 .form-wrapper__label {
