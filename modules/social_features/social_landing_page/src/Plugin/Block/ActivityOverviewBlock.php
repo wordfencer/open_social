@@ -264,9 +264,6 @@ class ActivityOverviewBlock extends BlockBase implements ContainerFactoryPluginI
           ],
         ],
       ],
-      '#cache' => [
-        'contexts' => ['user'],
-      ],
       '#attached' => [
         'library' => [
           'social_landing_page/activity_overview',
@@ -341,4 +338,11 @@ class ActivityOverviewBlock extends BlockBase implements ContainerFactoryPluginI
     return $query->execute()->fetchField();
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function getCacheMaxAge() {
+    // Ensure we don't recreate this block for a few minutes.s
+    return 2 * 60;
+  }
 }
