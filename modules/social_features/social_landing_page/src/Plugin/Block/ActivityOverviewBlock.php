@@ -58,8 +58,8 @@ class ActivityOverviewBlock extends BlockBase implements ContainerFactoryPluginI
     $topic_count = $node_counts['topic']->count;
 
     $group_count = $this->getGroupsCount();
-    $user_count  = $this->getUsersCount();
-    $post_count  = $this->getPostsCount();
+    $user_count = $this->getUsersCount();
+    $post_count = $this->getPostsCount();
     $comment_count = $this->getCommentsCount();
 
     return [
@@ -344,4 +344,5 @@ class ActivityOverviewBlock extends BlockBase implements ContainerFactoryPluginI
     // Ensure we don't recreate this block for a few minutes.
     return 2 * 60;
   }
+
 }
