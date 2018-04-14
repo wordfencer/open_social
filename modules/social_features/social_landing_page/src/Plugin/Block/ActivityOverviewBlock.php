@@ -53,6 +53,15 @@ class ActivityOverviewBlock extends BlockBase implements ContainerFactoryPluginI
    * {@inheritdoc}
    */
   public function build() {
+    $node_counts = $this->getNodeCounts();
+    $event_count = $node_counts['event']->count;
+    $topic_count = $node_counts['topic']->count;
+
+    $group_count = $this->getGroupsCount();
+    $user_count  = $this->getUsersCount();
+    $post_count  = $this->getPostsCount();
+    $comment_count = $this->getCommentsCount();
+
     return [
       [
         '#type' => 'container',
@@ -77,7 +86,7 @@ class ActivityOverviewBlock extends BlockBase implements ContainerFactoryPluginI
               'value' => [
                 '#type' => 'html_tag',
                 '#tag' => 'span',
-                '#value' => $this->getEventsCount(),
+                '#value' => $event_count,
                 '#attributes' => [
                   'class' => ['value'],
                 ],
@@ -111,7 +120,7 @@ class ActivityOverviewBlock extends BlockBase implements ContainerFactoryPluginI
               'value' => [
                 '#type' => 'html_tag',
                 '#tag' => 'span',
-                '#value' => $this->getTopicsCount(),
+                '#value' => $topic_count,
                 '#attributes' => [
                   'class' => ['value'],
                 ],
@@ -145,7 +154,7 @@ class ActivityOverviewBlock extends BlockBase implements ContainerFactoryPluginI
               'value' => [
                 '#type' => 'html_tag',
                 '#tag' => 'span',
-                '#value' => $this->getGroupsCount(),
+                '#value' => $group_count,
                 '#attributes' => [
                   'class' => ['value'],
                 ],
@@ -179,7 +188,7 @@ class ActivityOverviewBlock extends BlockBase implements ContainerFactoryPluginI
               'value' => [
                 '#type' => 'html_tag',
                 '#tag' => 'span',
-                '#value' => $this->getUsersCount(),
+                '#value' => $user_count,
                 '#attributes' => [
                   'class' => ['value'],
                 ],
@@ -213,7 +222,7 @@ class ActivityOverviewBlock extends BlockBase implements ContainerFactoryPluginI
               'value' => [
                 '#type' => 'html_tag',
                 '#tag' => 'span',
-                '#value' => $this->getPostsCount(),
+                '#value' => $post_count,
                 '#attributes' => [
                   'class' => ['value'],
                 ],
@@ -247,7 +256,7 @@ class ActivityOverviewBlock extends BlockBase implements ContainerFactoryPluginI
               'value' => [
                 '#type' => 'html_tag',
                 '#tag' => 'span',
-                '#value' => $this->getCommentsCount(),
+                '#value' => $comment_count,
                 '#attributes' => [
                   'class' => ['value'],
                 ],
@@ -264,9 +273,6 @@ class ActivityOverviewBlock extends BlockBase implements ContainerFactoryPluginI
           ],
         ],
       ],
-      '#cache' => [
-        'contexts' => ['user'],
-      ],
       '#attached' => [
         'library' => [
           'social_landing_page/activity_overview',
@@ -277,25 +283,15 @@ class ActivityOverviewBlock extends BlockBase implements ContainerFactoryPluginI
   }
 
   /**
-   * Get total count of events.
+   * Get node counts.
    */
-  protected function getEventsCount() {
+  protected function getNodeCounts() {
     $query = $this->connection->select('node_field_data', 'n');
-    $query->addExpression('COUNT(*)');
-    $query->condition('n.type', 'event');
+    $query->addField('n', 'type');
+    $query->addExpression('COUNT(*)', 'count');
     $query->condition('n.status', 1);
-    return $query->execute()->fetchField();
-  }
-
-  /**
-   * Get total count of topics.
-   */
-  protected function getTopicsCount() {
-    $query = $this->connection->select('node_field_data', 'n');
-    $query->addExpression('COUNT(*)');
-    $query->condition('n.type', 'topic');
-    $query->condition('n.status', 1);
-    return $query->execute()->fetchField();
+    $query->groupBy('n.type');
+    return $query->execute()->fetchAllAssoc('type');
   }
 
   /**
@@ -341,4 +337,11 @@ class ActivityOverviewBlock extends BlockBase implements ContainerFactoryPluginI
     return $query->execute()->fetchField();
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function getCacheMaxAge() {
+    // Ensure we don't recreate this block for a few minutes.
+    return 2 * 60;
+  }
 }
