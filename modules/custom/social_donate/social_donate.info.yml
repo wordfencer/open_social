@@ -1,0 +1,9 @@
+name: 'Social Donate'
+type: module
+description: 'Provides landing page blocks for donations.'
+core: 8.x
+dependencies:
+  - social_landing_page:social_landing_page
+  - commerce:commerce
+  - commerce_stripe:commerce_stripe
+package: Social
