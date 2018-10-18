@@ -1,0 +1,7 @@
+name: 'Social Group Staging'
+type: module
+description: 'Adds the possibility to prepare the group and its content before making it active.'
+core: 8.x
+package: Social (experimental)
+dependencies:
+- social_group:social_group

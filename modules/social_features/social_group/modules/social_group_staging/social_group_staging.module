@@ -1,0 +1,76 @@
+<?php
+
+/**
+ * @file
+ * Contains social_group_staging.module.
+ */
+
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_entity_base_field_info().
+ *
+ * Add a new group access field.
+ */
+function social_group_staging_entity_base_field_info(EntityTypeInterface $entity_type) {
+  $fields = [];
+
+  // Add a 'status' base field to all group types.
+  if ($entity_type->id() === 'group') {
+    $allowed_values = [
+      'active' => t('Active'),
+      'inactive' => t('Inactive'),
+    ];
+
+    $fields['group_access_status'] = BaseFieldDefinition::create('list_string')
+      ->setLabel(t('Status'))
+      ->setDescription(t('Status of the group. Setting it to <em>Inactive</em> allows you to prepare your group and its content before users will see it.'))
+      ->setTranslatable(TRUE)
+      ->setSettings([
+        'allowed_values' => $allowed_values,
+      ])
+      ->setDefaultValue(['value' => 'active'])
+      ->setCardinality(1)
+      ->setRequired(TRUE)
+      ->setDisplayOptions('view', [
+        'type' => 'hidden',
+      ])
+      ->setDisplayOptions('form', [
+        'type' => 'checkbox',
+        'weight' => 1,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayConfigurable('view', FALSE);
+  }
+
+  return $fields;
+}
+
+/**
+ * Implements hook_form_alter().
+ *
+ * Set the correct access for the group access field and place it in a fieldset.
+ */
+function social_group_staging_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $group_types = \Drupal::entityTypeManager()
+    ->getStorage('group_type')
+    ->loadMultiple();
+
+  foreach ($group_types as $group_type) {
+    if ($form_id === "group_{$group_type->id()}_add_form" || $form_id === "group_{$group_type->id()}_edit_form") {
+      $form['group_access_status']['#access'] = AccessResult::allowedIfHasPermissions(
+        \Drupal::currentUser(),
+        [
+          'bypass group access',
+          'manage all groups',
+          'administer inactive groups',
+        ],
+        'OR');
+
+      $form['#group_children']['group_access_status'] = 'group_content';
+    }
+  }
+}
