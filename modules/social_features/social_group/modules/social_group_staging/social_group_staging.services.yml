@@ -1,0 +1,5 @@
+services:
+  access_check.social_group_staging.permission:
+    class: 'Drupal\social_group_staging\Access\GroupStatusPermissionAccessCheck'
+    tags:
+    - { name: 'access_check', applies_to: '_group_status_permission' }

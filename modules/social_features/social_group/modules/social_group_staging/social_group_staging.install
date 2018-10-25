@@ -23,6 +23,17 @@ function social_group_staging_install() {
   $schema->addField('groups_field_data', 'group_access_status', $spec);
 
   // Grant permissions.
+  _social_group_staging_set_permissions();
+
+  // Set all existing groups to active.
+  _social_group_staging_initial_status();
+}
+
+/**
+ * Grant permissions for the unpublishing group functionality.
+ */
+function _social_group_staging_set_permissions() {
+  // Grant permissions.
   $roles = Role::loadMultiple();
   /** @var \Drupal\user\Entity\Role $role */
   foreach ($roles as $role) {
@@ -34,4 +45,11 @@ function social_group_staging_install() {
       user_role_grant_permissions($role->id(), ['administer inactive groups']);
     }
   }
+}
+
+/**
+ * Set all existing groups to active.
+ */
+function _social_group_staging_initial_status() {
+  // tbd
 }
