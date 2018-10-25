@@ -18,7 +18,7 @@ use Symfony\Component\Routing\Route;
  *   help = @Translation("Access will be granted to users with the specified group permission string.")
  * )
  */
-class ViewsGroupUnpublishedAccess extends GroupPermission {
+class GroupStatusAccess extends GroupPermission {
 
   /**
    * {@inheritdoc}
