@@ -5,11 +5,29 @@ namespace Drupal\social_group_staging;
 use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Config\ConfigFactoryOverrideInterface;
 use Drupal\Core\Config\StorageInterface;
+use Drupal\Core\Extension\ModuleHandler;
 
 /**
  * Class SocialEventManagersConfigOverride.
  */
 class SocialGroupStagingConfigOverride implements ConfigFactoryOverrideInterface {
+
+  /**
+   * The module handler service.
+   *
+   * @var \Drupal\Core\Extension\ModuleHandler
+   */
+  private $moduleHandler;
+
+  /**
+   * SocialGroupStagingConfigOverride constructor.
+   *
+   * @param \Drupal\Core\Extension\ModuleHandler $moduleHandler
+   *   The module handler service.
+   */
+  public function __construct(ModuleHandler $moduleHandler) {
+    $this->moduleHandler = $moduleHandler;
+  }
 
   /**
    * Load overrides.
@@ -48,6 +66,9 @@ class SocialGroupStagingConfigOverride implements ConfigFactoryOverrideInterface
         'handlers' => ['filter'],
       ],
     ];
+
+    // Allow modules to change the views, displays and the added handlers.
+    $this->moduleHandler->alter('views_handlers_override', $views);
 
     foreach ($views as $config_name => $data) {
       if (in_array($config_name, $names)) {

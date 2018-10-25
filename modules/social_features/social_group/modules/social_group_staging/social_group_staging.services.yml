@@ -6,5 +6,6 @@ services:
 
   social_group_staging.overrider:
     class: \Drupal\social_group_staging\SocialGroupStagingConfigOverride
+    arguments: ['@module_handler']
     tags:
     - {name: config.factory.override, priority: 5}
