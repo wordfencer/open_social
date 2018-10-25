@@ -51,5 +51,13 @@ function _social_group_staging_set_permissions() {
  * Set all existing groups to active.
  */
 function _social_group_staging_initial_status() {
-  // tbd
+  $groups = \Drupal::entityTypeManager()
+    ->getStorage('group')
+    ->loadMultiple();
+
+  /** @var \Drupal\group\Entity\Group $group */
+  foreach ($groups as $group) {
+    $group->set('group_access_status', 'active');
+    $group->save();
+  }
 }
