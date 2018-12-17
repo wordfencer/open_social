@@ -1,6 +1,37 @@
-profile_profile_field_profile_nick_name: false
-profile_profile_field_profile_facebook: false
-profile_profile_field_profile_linkedin: false
-profile_profile_field_profile_twitter: false
-profile_profile_field_profile_instagram: false
-profile_profile_field_profile_website: false
+fields:
+    profile_profile_field_profile_nick_name:
+        field_name: field_profile_nick_name
+        edit_form: false
+        view_form: false
+        field_group: 'group_profile_names_image'
+        searchable: true
+    profile_profile_field_profile_facebook:
+        field_name: field_profile_nick_name
+        edit_form: false
+        view_form: false
+        field_group: ''
+        searchable: true
+    profile_profile_field_profile_linkedin:
+        field_name: field_profile_nick_name
+        edit_form: false
+        view_form: false
+        field_group: ''
+        searchable: true
+    profile_profile_field_profile_twitter:
+        field_name: field_profile_nick_name
+        edit_form: false
+        view_form: false
+        field_group: ''
+        searchable: true
+    profile_profile_field_profile_instagram:
+        field_name: field_profile_nick_name
+        edit_form: false
+        view_form: false
+        field_group: ''
+        searchable: true
+    profile_profile_field_profile_website:
+        field_name: field_profile_nick_name
+        edit_form: false
+        view_form: false
+        field_group: ''
+        searchable: true

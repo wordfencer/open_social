@@ -4,6 +4,9 @@ dependencies:
   module:
     - link
     - profile
+  enforced:
+    module:
+      - social_profile_fields
 id: profile.field_profile_website
 field_name: field_profile_website
 entity_type: profile

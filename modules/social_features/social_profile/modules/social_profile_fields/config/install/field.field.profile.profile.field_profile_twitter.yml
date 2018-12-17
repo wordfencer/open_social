@@ -6,6 +6,9 @@ dependencies:
     - profile.type.profile
   module:
     - link
+  enforced:
+    module:
+      - social_profile_fields
 id: profile.profile.field_profile_twitter
 field_name: field_profile_twitter
 entity_type: profile
