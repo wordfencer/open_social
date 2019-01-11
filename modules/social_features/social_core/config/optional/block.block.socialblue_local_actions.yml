@@ -19,6 +19,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: '/admin/reports/*'
-    negate: true
+    pages: '/group/*/membership'
+    negate: false
     context_mapping: {  }
