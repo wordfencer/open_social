@@ -54,11 +54,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
+  like_and_dislike:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   body: true
   field_content_visibility: true
   field_files: true
-  like_and_dislike: true
   groups: true
   groups_type_closed_group: true
   groups_type_open_group: true
