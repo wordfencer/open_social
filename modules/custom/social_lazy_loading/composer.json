@@ -1,0 +1,8 @@
+{
+  "name": "social/social_lazy_loading",
+  "description": "Adds lazy loading support through the dinbror/blazy library",
+  "type": "drupal-module",
+  "require": {
+    "bower-asset/bLazy": "1.8.2"
+  }
+}

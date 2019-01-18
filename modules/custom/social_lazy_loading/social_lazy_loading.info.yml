@@ -1,0 +1,5 @@
+name: 'Social Lazy Loading'
+description: 'Adds lazy loading support through the bLazy library.'
+type: module
+core: 8.x
+package: Social
