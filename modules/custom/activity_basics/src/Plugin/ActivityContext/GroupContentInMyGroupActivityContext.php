@@ -89,7 +89,7 @@ class GroupContentInMyGroupActivityContext extends ActivityContextBase {
 
       // List of managers which shouldn't receive notifications.
       $account_ids = [
-        // The current user when he/she is a manager.
+        // The current user when it is a manager.
         $this->currentUser->id(),
         // New group member with the "Group manager" role.
         $group_content->getEntity()->id(),

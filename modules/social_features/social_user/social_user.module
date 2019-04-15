@@ -285,7 +285,7 @@ function _social_user_pass_reset_submit($form, FormStateInterface $form_state) {
   $storage = $form_state->getValues();
   $submitted_user_id = isset($storage['uid']) ? $storage['uid'] : '';
 
-  // Only when there is actual user, and the actual user is changing his own
+  // Only when there is actual user, and the actual user is changing their own
   // account we redirect. When you're editing others you don't want this.
   if (!empty($submitted_user_id) && \Drupal::currentUser()->id() == $submitted_user_id) {
     $first_time_login = $form_state->get('first_time_login');

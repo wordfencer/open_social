@@ -142,7 +142,7 @@ function get_name_from_enrollment($id) {
   // User is AN by default.
   $enrollment_name = \Drupal::configFactory()->get('user.settings')->get('anonymous');
 
-  // If there is a Uid. Lets load the user and return his display name.
+  // If there is a Uid. Lets load the user and return display name.
   if ($enrollment->hasField('field_account') &&
     $enrollment->getFieldValue('field_account', 'target_id') > 0) {
     $entity_storage = \Drupal::entityTypeManager()

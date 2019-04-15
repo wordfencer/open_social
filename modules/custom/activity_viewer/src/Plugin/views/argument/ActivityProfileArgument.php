@@ -31,7 +31,7 @@ class ActivityProfileArgument extends ArgumentPluginBase {
     // User is a recipient.
     $or_condition->condition('activity__field_activity_recipient_user.field_activity_recipient_user_target_id', $this->argument, '=');
 
-    // Or posted by the user, but not on someone else his profile..
+    // Or posted by the user, but not on someone else their profile..
     // TODO Because of this set-up we have to use distinct. Not perfect.
     $by_user = db_and();
     $by_user->condition('activity_field_data.user_id', $this->argument, '=');

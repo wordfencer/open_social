@@ -84,7 +84,7 @@ class EventEnrolledOrCreated extends FilterPluginBase {
     $event_creator->condition('node_field_data.type', 'event', '=');
     $or_condition->condition($event_creator);
 
-    // Or if he enrolled to the event.
+    // Or if user enrolled to the event.
     $enrolled_to_event = db_and();
     $enrolled_to_event->condition('event_enrollment_field_data.user_id', $account_profile, '=');
     $enrolled_to_event->condition('event_enrollment__field_enrollment_status.field_enrollment_status_value', '1', '=');

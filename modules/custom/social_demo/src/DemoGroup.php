@@ -190,7 +190,7 @@ abstract class DemoGroup extends DemoContent {
 
       if (($account = current($account)) && !$entity->getMember($account)) {
         $values = [];
-        // If the user should have the manager role, grant it to him now.
+        // If the user should have the manager role, grant it to user now.
         if (in_array($account_uuid, $managers)) {
           $values = ['group_roles' => [$entity->bundle() . '-group_manager']];
         }

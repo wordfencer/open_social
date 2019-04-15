@@ -113,7 +113,7 @@ class GoogleAuthController extends ControllerBase {
       return $this->redirect('user.login');
     }
 
-    // Authorize the user and redirect him to the account page.
+    // Authorize the user and redirect to the account page.
     user_login_finalize($account);
 
     return $this->redirect('entity.user.canonical', [
@@ -151,7 +151,7 @@ class GoogleAuthController extends ControllerBase {
     }
 
     // Check whether user account exists. If account already exists,
-    // authorize the user and redirect him to the account page.
+    // authorize the user and redirect to the account page.
     $account = $this->entityTypeManager()
       ->getStorage('user')
       ->loadByProperties([

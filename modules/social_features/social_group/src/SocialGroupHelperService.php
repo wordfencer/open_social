@@ -145,7 +145,7 @@ class SocialGroupHelperService {
    * Get all group memberships for a certain user.
    *
    * @param int $uid
-   *   The UID for which we fetch the groups he is member of.
+   *   The UID for which we fetch the groups user is member of.
    *
    * @return array
    *   List of group IDs the user is member of.
