@@ -69,6 +69,9 @@
                 "Improve performance for embeds": "https://www.drupal.org/files/issues/2018-03-16/url_embed-caching-layer-2867668-17.patch",
                 "Translate dialog title": "https://www.drupal.org/files/issues/2018-03-16/url_embed_translate_dialog_title-2953591-2.patch"
             },
+            "drupal/profile": {
+                "Testing patch manually": "https://www.drupal.org/files/issues/2019-04-22/2978233-12.patch"
+            },
             "drupal/bootstrap": {
                 "Dropdown toggle variable ignored when using links__dropbutton": "https://www.drupal.org/files/issues/2018-12-19/dropdown-without-default-button-3021413-2.patch",
                 "JSDeliver issues unsupported operand types": "https://www.drupal.org/files/issues/2019-01-24/3027569-8.x-3.x-8.patch"
