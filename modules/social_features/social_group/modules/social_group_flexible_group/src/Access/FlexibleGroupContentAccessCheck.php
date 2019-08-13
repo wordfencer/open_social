@@ -53,15 +53,11 @@ class FlexibleGroupContentAccessCheck implements AccessInterface {
     $type = $group->getGroupType();
     // Don't interfere if the group isn't a flexible group.
     if ($type instanceof GroupTypeInterface && $type->id() !== 'flexible_group') {
-      if (!empty($group_permission)) {
-        return GroupAccessResult::allowedIfHasGroupPermissions($group, $account, [$group_permission]);
-      }
-
-      $condition1 = $account->hasPermission('manage all groups');
-      $condition2 = $group->hasPermission('administer members', $account);
-      $condition3 = $group->getMember($account);
-
-      return AccessResult::allowedIf($condition1 || $condition2 || $condition3);
+      // We return allowed here because andIf is used when gathering access 
+      // results for routes. Returning anything other than allowed here would 
+      // cause this function to return `Forbidden`. See #2991698 for an
+      // explanation.
+      return AccessResult::allowed();
     }
 
     // A user with this access can definitely do everything.
